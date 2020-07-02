@@ -1,5 +1,5 @@
 {
-  "name": "beforeknow_chron",
+  "name": "cron",
   "version": "1.0.0",
   "description": "",
   "main": "chat_archiver.js",
@@ -11,5 +11,8 @@
     "url": "github.com/ammark47/beforeknow-chron"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.19.2"
+  }
 }
