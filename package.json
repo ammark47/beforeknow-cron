@@ -1,0 +1,15 @@
+{
+  "name": "beforeknow_chron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat_archiver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/ammark47/beforeknow-chron"
+  },
+  "author": "",
+  "license": "ISC"
+}
