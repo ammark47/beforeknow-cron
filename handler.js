@@ -1,8 +1,26 @@
 'use strict';
 const axios = require('axios')
+const StreamChat = require('stream-chat').StreamChat
 
-module.exports.run = (event, context, callback) => {
-  axios.post('https://52720713a0e180375a43fd43286e1ef3.m.pipedream.net', { timestamp: new Date() })
-  .then(response => callback(null, { message: 'We ran your scheduled job', response }))
-  .catch(err => callback(true, err))
+require('custom-env').env(process.env.NODE_ENV) 
+const { STREAM_API_KEY, STREAM_APP_SECRET } = require('./config')
+
+module.exports.run = async (event, context, callback) => {
+  const streamChatServerClient = new StreamChat(
+    STREAM_API_KEY,
+    STREAM_APP_SECRET ,
+    {
+      logger: (logLevel, message, extraData) => {
+        console.log(message);
+      }
+    }
+  )
+
+  const filter = { type: 'messaging', members: { $nin: ['ammark1111_gmail_com'] } }
+  const channels = await streamChatServerClient.queryChannels(filter)
+
+  for (const c of channels) {
+    console.log(c.data.created_at, c.cid);
+  }
+
 }
