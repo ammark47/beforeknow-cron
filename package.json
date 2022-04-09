@@ -16,7 +16,7 @@
     "axios": "0.19.2",
     "custom-env": "2.0.1",
     "dotenv": "8.2.0",
-    "moment": "2.27.0",
+    "moment": "2.29.2",
     "stream-chat": "1.12.1"
   }
 }
